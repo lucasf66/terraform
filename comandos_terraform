@@ -1,0 +1,7 @@
+aws configure --> colocar access id , access key
+
+terraform init --> primeiro comando para iniciar , baixar dependencias (modulos ex: AWS)
+
+terraform plan --> Fazer o Deploy 
+
+terrform apply --> Commit , aplicar.
