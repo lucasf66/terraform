@@ -1,0 +1,69 @@
+Blocos terraform
+
+Terraform = Configurações basicas do uso do terraform  
+
+    terraform {
+        required_version = ">= 1.0.0 , <1.2.0" #"~>1.1.0" funcionara da 1.1.0 até a 1.1.n
+        required_providers{
+            aws = {
+                version = "3.5.0" # Mesma forma que o requeired version
+                source = "hashicorp/aws"
+            }
+        }
+        backend "s3"{ #serve para guardar state remotament , como por exemplo num bucket s3
+        }  
+    }
+
+Provider = Configuração nescessária para usar os providers
+
+    provider "aws" {
+
+    }
+
+Resource = Criação de resourcers baseados em serviços do providers
+
+    resource "aws_instance" "vm1" {
+
+    }
+
+Data = Busca informações de fora do Terraform
+
+    data "aws_ami" "ami" {
+
+    }
+
+module = Utilização de modulos 
+
+    module "vpc" {
+
+    }
+
+variable = Declaração de variaveis 
+
+    variable "ip" {
+
+    }
+
+output = Mesma coisa que um print , jogar na tela
+
+    output "name" {
+
+    }
+
+locals = Serve para pegar funções ou expressões , mesmo que uma função 
+
+    locals "nome" {
+        
+    }
+
+---------------------------------------------------------------------------------------
+
+Comandos basicos
+
+terraform init = incia o terraform no diretorio
+
+terraform validate = verifica se o codigo esta correto
+
+terraform plan = planeja e verifica o que vai ser feito
+
+terrform apply = faz o deploy do plan
